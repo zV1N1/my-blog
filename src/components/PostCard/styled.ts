@@ -21,9 +21,10 @@ export const PostCardCover = styled.div`
 export const PostCardHeading = styled.h2`
   ${({ theme }) => css`
     font-size: ${theme.font.sizes.medium};
+    color: ${theme.colors.white};
 
     a {
-      color: ${theme.colors.darkDray};
+      color: whitesmoke;
     }
   `}
 `;

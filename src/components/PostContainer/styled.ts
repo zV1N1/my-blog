@@ -6,6 +6,7 @@ export const Container = styled.article`
   }
   p {
     margin: ${({ theme }) => theme.spacings.medium} 0;
+    color: ${({ theme }) => theme.colors.white};
   }
   ul,
   ol {
@@ -16,11 +17,11 @@ export const Container = styled.article`
       width: 100%;
       overflow-x: auto;
       background: ${theme.colors.lightGray};
-      color: ${theme.colors.darkDray};
       padding: ${theme.spacings.large};
       margin: ${theme.spacings.large} 0;
       line-height: 1.5;
       font-size: ${theme.font.sizes.medium};
+      color: ${theme.colors.white};
     `}
   }
 `;
