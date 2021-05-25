@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from 'next/head';
 import { Category, Container } from './styles';
 import { PostData } from '../../domain/posts/post';
 import { Header } from '../../components/Header';
@@ -6,6 +6,8 @@ import { MainContainer } from '../../components/MainContainer';
 import { PostCard } from '../../components/PostCard';
 import { Footer } from '../../components/Footer';
 import { SITE_NAME } from '../../config/app-config';
+import { AnimationCat } from '../../components/AnimaCat';
+import Image from 'next/image'
 
 export type HomePageProps = {
   posts: PostData[];
@@ -17,9 +19,10 @@ export default function HomePage({ posts, category }: HomePageProps) {
     <>
       <Head>
         <title>{SITE_NAME}</title>
-        <meta name="description" content="This is my blog"/>
+        <meta name="description" content="This is my blog" />
       </Head>
       <Header />
+      <AnimationCat mode={'sneak'} />
       {category && <Category>Categoria: {category}</Category>}
       <MainContainer>
         <Container>
@@ -33,6 +36,7 @@ export default function HomePage({ posts, category }: HomePageProps) {
           ))}
         </Container>
       </MainContainer>
+
       <Footer />
     </>
   );

@@ -1,20 +1,42 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
+
+const AnimaCard = keyframes`
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+`;
 
 export const Container = styled.div`
-  transition: opacity 300ms ease-in-out;
+  text-align: center;
+  animation: ${AnimaCard} 2s ease-in-out;
+  transition: opacity 300ms;
 
   &:hover {
-    opacity: 0.8;
+    opacity: 0.7;
   }
 `;
 
 export const PostCardCover = styled.div`
-  margin-bottom: ${({ theme }) => theme.spacings.small};
-
+  overflow: hidden;
+  width: 280px;
+  height: 250px;
+  border: none;
+  border-radius: 10px;
   img {
     width: 280px;
-    height: 220px;
-    display: block;
+    height: 250px;
+    border: none;
+    border-radius: 10px;
+    transition: opacity 300ms, transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 `;
 

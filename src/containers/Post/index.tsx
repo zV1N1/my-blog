@@ -10,12 +10,19 @@ import { PostDetails } from '../../components/PostDetails';
 import { SITE_NAME } from '../../config/app-config';
 import { PostData } from '../../domain/posts/post';
 import { removeHtml } from '../../utils/remove-html';
+import { AnimationCat } from '../../components/AnimaCat';
+import { useState } from 'react';
+import { setTimeout } from 'timers';
+import { Container } from './styles';
 
 export type PostProps = {
   post: PostData;
 };
 
 export const Post = ({ post }: PostProps) => {
+  const [cat, setCat] = useState(false);
+  setTimeout(() => setCat(true), 1000 * 30);
+
   return (
     <>
       <Head>
@@ -28,17 +35,21 @@ export const Post = ({ post }: PostProps) => {
         />
       </Head>
       <Header />
+      {cat && <AnimationCat mode="run" />}
       <MainContainer>
-        <Heading>{post.title}</Heading>
-        <PostCover coverUrl={post.cover.url} alt={post.title} />
-        <PostDetails
-          author={post.author.name}
-          category={post.category.name}
-          date={post.created_at}
-        ></PostDetails>
-        <PostContainer content={post.content}></PostContainer>
-        <Comments title={post.title} slug={post.slug} />
+        <Container>
+          <Heading>{post.title}</Heading>
+          <PostCover coverUrl={post.cover.url} alt={post.title} />
+          <PostDetails
+            author={post.author.name}
+            category={post.category.name}
+            date={post.created_at}
+          ></PostDetails>
+          <PostContainer content={post.content}></PostContainer>
+          <Comments title={post.title} slug={post.slug} />
+        </Container>
       </MainContainer>
+
       <Footer />
     </>
   );
