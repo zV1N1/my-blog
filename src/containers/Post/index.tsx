@@ -46,10 +46,9 @@ export const Post = ({ post }: PostProps) => {
             date={post.created_at}
           ></PostDetails>
           <PostContainer content={post.content}></PostContainer>
+          </Container>
           <Comments title={post.title} slug={post.slug} />
-        </Container>
       </MainContainer>
-
       <Footer />
     </>
   );
