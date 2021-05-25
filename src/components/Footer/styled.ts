@@ -6,5 +6,6 @@ export const Container = styled.footer`
     margin: ${theme.spacings.medium};
     color: ${theme.colors.gray};
     font-size: 1.2rem;
+  
   `}
 `;

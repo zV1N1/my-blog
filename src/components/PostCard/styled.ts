@@ -27,12 +27,14 @@ export const PostCardCover = styled.div`
   height: 250px;
   border: none;
   border-radius: 10px;
+  box-shadow: 15px 10px 20px black;
   img {
     width: 280px;
     height: 250px;
     border: none;
     border-radius: 10px;
     transition: opacity 300ms, transform 0.3s ease-in-out;
+    
 
     &:hover {
       transform: scale(1.2);
